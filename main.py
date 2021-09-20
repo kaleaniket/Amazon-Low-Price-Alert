@@ -3,10 +3,10 @@ from bs4 import BeautifulSoup
 import lxml
 import smtplib
 
-MY_EMAIL = "akaledummy@gmail.com"
-PASSWORD = "93856162"
+MY_EMAIL = "YOUR EMAIL"
+PASSWORD = "YOUR_PASSWORD"
 
-URL = "https://www.amazon.in/Test-Exclusive_2020_1151-Multi-3GB-Storage/dp/B089MT35TK/ref=sr_1_1?dchild=1&keywords=redmi+note+10+pro&qid=1632120024&sr=8-1"
+URL = "AMAZON PRODUCT URL"
 headers = {
     "Accept-Language": "en-US,en;q=0.9",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
@@ -26,12 +26,12 @@ value2 = price_split.split(",")[1]
 final_price = float(value1 + value2)
 print(final_price)
 
-if final_price < 17999.1:
+if final_price < "YOUR PRICE CHOICE":
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(MY_EMAIL, PASSWORD)
         connection.sendmail(
             from_addr=MY_EMAIL,
             to_addrs=MY_EMAIL,
-            msg=f"Subject:Low price alert!!!!.\n\nRedmi Note 10 pro price drop"
+            msg="YOUR MESSAGE"
         )
